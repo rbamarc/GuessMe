@@ -19,16 +19,20 @@ public class GuessMe {
         
         //prompt user for an input 
         System.out.println("Hello! please pick a number between 1 and 20");
-        guess = inputReader.nextLine();
         
-        userGuess = Integer.parseInt(guess);
+        do {
+            
+            guess = inputReader.nextLine();
         
-        if (userGuess < num) {
-            System.out.println("nice try, that was too low. it was: " + num);
-        } else if (userGuess > num) {
-            System.out.println("Too bad, too high. It was: " + num);
-        } else {
-            System.out.println("Nice Guess! That was it! mind reader!!");
-        }
+            userGuess = Integer.parseInt(guess);
+            if (userGuess < num) {
+                System.out.println("that was too low. try again " );
+            } else if (userGuess > num) {
+                System.out.println("Too bad, too high. try again" );
+            } else {
+                System.out.println("Nice Guess! That was it! mind reader!!");
+            break;
+            } 
+        } while ( userGuess != num);
     }
 }
